@@ -33,6 +33,14 @@
     "devices/e5/test_charger.py": {
       "path": "test_charger.py",
       "source_sha256": "e2ccba6916d526ebc666c4fabceb8a4ec9b2b96fa80c17b78732985c74d92238"
+    },
+    "rootfs/overlay/usr/share/alsa/ucm2/conf.d/sprdphone-sc273/sprdphone-sc2730.conf": {
+      "path": "overlay/usr/share/alsa/ucm2/conf.d/sprdphone-sc273/sprdphone-sc2730.conf",
+      "source_sha256": "d8b524e62d4656c7574b2da5a2016348295d3e2fe4028c7d548ec9fa170ac3a9"
+    },
+    "rootfs/overlay/usr/share/alsa/ucm2/sprdphone-sc273/HiFi.conf": {
+      "path": "overlay/usr/share/alsa/ucm2/sprdphone-sc273/HiFi.conf",
+      "source_sha256": "5b2f3af71651d0d876fa81a869c9da213a200bdf1260ab68484442603ad25596"
     }
   }
 }
