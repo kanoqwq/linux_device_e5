@@ -9,7 +9,7 @@ import tempfile
 HERE = Path(__file__).resolve().parent
 kernel = Path(sys.argv[1])
 source = (kernel / 'drivers/power/supply/aw32257_charger.c').read_text()
-extract = runpy.run_path(str(HERE.parent / 't551m/test_wifi_tx.py'))['function']
+extract = runpy.run_path(str(HERE.parent / 'linux_device_common/kernel/source.py'))['function']
 prelude = r'''
 #include <assert.h>
 #include <errno.h>
