@@ -21,8 +21,8 @@
 | 无线 | 共享 SDIO TX 所有权/错误处理修复；默认关闭固件调试日志；使用 E5 自己的 WCN 固件 |
 | NV/启动 | 厂商服务使用本机隔离工作副本；物理 NV 分区只读；保留 TF 启动和原有默认系统设置 |
 
-具体通用功能设计见 [屏幕说明](../t551m/infoscreen/README.md) 及仓库内已有修复记录。
-2026-10-11的[屏幕内存与低唤醒修复](../../docs/SCREEN-MEMORY-FIX-20261011.zh-CN.md)
+具体通用功能设计见 [屏幕说明](https://github.com/Enceka/infoscreen/blob/main/docs/device-ui.zh-CN.md) 及仓库内已有修复记录。
+2026-10-11的[屏幕内存与低唤醒修复](https://github.com/sprd-linux-devs/e5-linux/blob/main/docs/SCREEN-MEMORY-FIX-20261011.zh-CN.md)
 使用同一构建入口，E5同时包含通话事件推送、共用长连接读取及插件SDK配套修改。
 “纳入”表示软件实现已移植，不等于每项外设、通话和无线压力场景均通过 E5 实物测试。
 
@@ -36,7 +36,7 @@
 - CPU 开机电压偏移已核验 E5 原厂 SML 的原生接口，网页与屏幕均可设置。
   三个供电域的 31 个频率档位与 PMIC 实测通过，范围 −50～+25 mV、步进 3.125 mV，
   保存后重启生效；仍校验 SoC 与双槽固件，未知或混用固件不开放调压。
-  交付恢复原厂电压，详见 [调压验证](../../docs/CPU-CONTROL.zh-CN.md)。
+  交付恢复原厂电压，详见 [调压验证](https://github.com/sprd-linux-devs/e5-linux/blob/main/docs/CPU-CONTROL.zh-CN.md)。
 - 不复制 T551M 固件、NV、MAC、密码、热点配置及默认启动选择。
 - 多客户端无线速率问题仍需专项验证，本移植不宣称已解决该问题。
 
@@ -81,7 +81,7 @@ E5_STANDALONE=1 E5_DEVICE_FILES=0 bash openwrt/build-rootfs.sh
 ```
 
 默认仅保留内核的容器支持，不预装 Docker/containerd/runc。用户可在刷入后
-按 [容器说明](../../docs/CONTAINERS.zh-CN.md) 自行安装；只有明确需要预装时
+按 [容器说明](https://github.com/sprd-linux-devs/e5-linux/blob/main/docs/CONTAINERS.zh-CN.md) 自行安装；只有明确需要预装时
 才将 `E5_DOCKER` 设为 `1`。
 
 实机更新使用本机原 rootfs 制作并逐文件校验的私有差异包，配合本机 boot 头构建的新
@@ -94,7 +94,7 @@ boot_b；不是可公开分发的通用镜像。本次没有完整执行通用�
 使用 OpenWrt ARM64/musl 的 fsck.f2fs 1.16.0 及配套库，默认写入
 `out/boot/f2fs-tools`。仅 userdata 根挂载失败时自动检查、修复并复查；
 TF 启动跳过，正常启动不执行 fsck。详见
-[恢复与插拔亮屏记录](../../docs/F2FS-RECOVERY-AND-CHARGER-WAKE-20261010.zh-CN.md)。
+[恢复与插拔亮屏记录](https://github.com/sprd-linux-devs/e5-linux/blob/main/docs/F2FS-RECOVERY-AND-CHARGER-WAKE-20261010.zh-CN.md)。
 
 ```sh
 python3 device/linux_device_e5/test_charger.py /path/to/prepared-e5-linux
